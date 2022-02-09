@@ -9,18 +9,18 @@
 # define MIN_INT -2147483648
 
 struct s_node {
-	int	data;
+	int				data;
 	struct s_node	*next;
 	struct s_node	*prev;
 };
 typedef struct s_node	t_node;
 
 enum e_errors {
-	ERR_USAGE = 1,
+	ERR_USAGE,
 	ERR_ARGS,
 	ERR_DUP,
 	ERR_RANGE,
-	ERR_SORTED,
+	ERR_SORTED
 };
 
 int		check_args(char **args, int argc);
