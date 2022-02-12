@@ -2,6 +2,7 @@
 
 void	err_manager(int exit_code)
 {
-	ft_putendl_fd("Error", STDERR_FILENO);
+	if (exit_code != 0)
+		ft_putendl_fd("Error", STDERR_FILENO);
 	exit(exit_code + 1);
 }
