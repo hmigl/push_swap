@@ -12,7 +12,7 @@ typedef struct s_node	t_node;
 
 t_node	*dlstnew(int data);
 t_node	*dlstlast(t_node *lst);
-void	dslstadd_front(t_node **lst, t_node *new);
+void	dlstadd_front(t_node **lst, t_node *new);
 void	dlstadd_back(t_node **lst, t_node *new);
 void	dlst_dealloc(t_node **head, t_node **tail);
 

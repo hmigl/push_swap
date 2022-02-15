@@ -15,7 +15,7 @@ LFLAGS := -L$(LFT_DIR) -lft -L$(DS_LIST_DIR) -lds_list
 CFLAGS := -Wall -Wextra -Werror -ggdb3
 CC := gcc
 
-SRC = main.c error.c validation.c
+SRC = main.c error.c validation.c stack_ops.c fulfill.c
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
@@ -25,10 +25,10 @@ $(NAME): $(OBJ) $(LFT) $(DS_LIST)
 	@$(CC) $(OBJ) $(LFLAGS) -o $@
 
 $(LFT):
-	@make --no-print-directory -C $(LFT_DIR)
+	@make -C $(LFT_DIR) --no-print-directory
 
 $(DS_LIST):
-	@make --no-print-directory -C $(DS_LIST_DIR)
+	@make -C $(DS_LIST_DIR) --no-print-directory
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(IFLAGS) -c $< -o $@
@@ -39,13 +39,13 @@ $(OBJ_DIR):
 	@mkdir $@
 
 clean:
-	@make clean --no-print-directory -C $(LFT_DIR)
-	@make clean --no-print-directory -C $(DS_LIST_DIR)
+	@make clean -C $(LFT_DIR) --no-print-directory
+	@make clean -C $(DS_LIST_DIR) --no-print-directory
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@make fclean --no-print-directory -C $(LFT_DIR)
-	@make fclean --no-print-directory -C $(DS_LIST_DIR)
+	@make fclean -C $(LFT_DIR) --no-print-directory
+	@make fclean -C $(DS_LIST_DIR) --no-print-directory
 	@rm -rf $(NAME)
 
 re: fclean all
