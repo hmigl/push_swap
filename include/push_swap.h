@@ -37,4 +37,7 @@ t_node	*pop(t_stack *stack);
 t_node	*peek(t_stack *stack);
 int		isempty(t_node *top);
 
+void	pa(t_data *data);
+void	pb(t_data *data);
+
 #endif
