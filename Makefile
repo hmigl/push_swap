@@ -15,7 +15,7 @@ LFLAGS := -L$(LFT_DIR) -lft -L$(DS_LIST_DIR) -lds_list
 CFLAGS := -Wall -Wextra -Werror -ggdb3
 CC := gcc
 
-SRC = main.c error.c validation.c stack_ops.c fulfill.c
+SRC = main.c error.c validation.c ops_stack.c fulfill.c
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 

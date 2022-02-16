@@ -31,6 +31,10 @@ enum e_errors {
 int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
 void	fulfill(t_data *data, char **args, int argc);
+
 void	push(t_stack *stack, t_node *new_node);
+t_node	*pop(t_stack *stack);
+t_node	*peek(t_stack *stack);
+int		isempty(t_node *top);
 
 #endif
