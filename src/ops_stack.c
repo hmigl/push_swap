@@ -34,6 +34,8 @@ t_node	*pop(t_stack *stack)
 
 void	push(t_stack *stack, t_node *new_node)
 {
+	if (isempty(stack->top))
+		return ;
 	dlstadd_front(&(stack->top), new_node);
 	++(stack->size);
 }
