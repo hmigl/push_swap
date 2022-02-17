@@ -45,4 +45,9 @@ void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
 
+void	rotate(t_stack *stack);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+
 #endif
