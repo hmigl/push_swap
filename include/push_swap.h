@@ -32,12 +32,17 @@ int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
 void	fulfill(t_data *data, char **args, int argc);
 
-void	push(t_stack *stack, t_node *new_node);
 t_node	*pop(t_stack *stack);
 t_node	*peek(t_stack *stack);
 int		isempty(t_node *top);
 
+void	push(t_stack *stack, t_node *new_node);
 void	pa(t_data *data);
 void	pb(t_data *data);
+
+void	swap(t_stack *stack);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
 
 #endif
