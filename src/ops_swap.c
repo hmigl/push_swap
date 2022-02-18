@@ -34,7 +34,7 @@ void	sb(t_data *data)
 }
 
 /* ss:
- * swap a and swap b, at the same time
+ * sa and sb, at the same time
  */
 void	ss(t_data *data)
 {

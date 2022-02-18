@@ -16,7 +16,7 @@ CFLAGS := -Wall -Wextra -Werror -ggdb3
 CC := gcc -g
 
 SRC = main.c error.c validation.c fulfill.c \
-	  ops_stack.c ops_push.c ops_swap.c ops_rotate.c
+	  ops_stack.c ops_push.c ops_swap.c ops_rotate.c ops_rev_rotate.c
 
 SRC := $(addprefix $(SRC_DIR)/, $(SRC))
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
