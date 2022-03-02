@@ -3,7 +3,8 @@ NAME := libds_list.a
 OBJ_DIR := obj
 
 SRC := dlstnew.c dlstlast.c dlstadd_front.c \
-	   dlstadd_back.c dlst_dealloc.c
+	   dlstadd_back.c dlst_dealloc.c dlst_issorted.c
+
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 CFLAGS := -Wall -Wextra -Werror
