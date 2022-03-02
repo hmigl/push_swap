@@ -21,16 +21,20 @@ static void	init_stacks(t_data *data)
 	data->stack_b = b;
 	data->stack_a->top = NULL;
 	data->stack_b->top = NULL;
+	data->stack_a->bottom = NULL;
+	data->stack_b->bottom = NULL;
 	data->stack_a->size = 0;
 	data->stack_b->size = 0;
 }
 
 void	fulfill(t_data *data, char **args, int argc)
 {
+	int	num;
+
 	init_stacks(data);
 	while (argc-- != 0)
 	{
-		int num = ft_atoi(args[argc]);
+		num = ft_atoi(args[argc]);
 		push(data->stack_a, dlstnew(num));
 	}
 }

@@ -12,7 +12,7 @@ DS_LIST := $(DS_LIST_DIR)/libds_list.a
 IFLAGS := -I$(INCLUDE_DIR) -I$(LFT_DIR) -I$(DS_LIST_DIR)
 LFLAGS := -L$(LFT_DIR) -lft -L$(DS_LIST_DIR) -lds_list
 
-CFLAGS := -Wall -Wextra -Werror -ggdb3
+CFLAGS := -Wall -Wextra -Werror
 CC := gcc -g
 
 SRC = main.c error.c validation.c fulfill.c \
