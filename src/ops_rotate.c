@@ -8,6 +8,7 @@ void	rotate(t_stack *stack)
 		return ;
 	fst = pop(stack);
 	dlstadd_back(&(stack->top), fst);
+	stack->bottom = fst;
 	++(stack->size);
 }
 

@@ -7,9 +7,10 @@ void	rev_rotate(t_stack *stack)
 
 	if (isempty(stack->top) || stack->size == 1)
 		return ;
-	last = dlstlast(stack->top);
+	last = stack->bottom;
 	scd_last = last->prev;
-	scd_last->next = NULL;
+	stack->bottom = scd_last;
+	stack->bottom->next = NULL;
 	last->prev = NULL;
 	dlstadd_front(&(stack->top), last);
 }

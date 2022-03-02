@@ -20,7 +20,10 @@ t_node	*pop(t_stack *stack)
 	if (!removed)
 		return (NULL);
 	if (stack->size == 1)
+	{
 		stack->top = NULL;
+		stack->bottom = NULL;
+	}
 	else
 	{
 		stack->top = stack->top->next;
@@ -36,6 +39,8 @@ void	push(t_stack *stack, t_node *new_node)
 {
 	if (!new_node)
 		return ;
+	if (isempty(stack->top))
+		stack->bottom = new_node;
 	dlstadd_front(&(stack->top), new_node);
 	++(stack->size);
 }

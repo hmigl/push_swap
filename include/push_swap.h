@@ -13,6 +13,7 @@ typedef struct s_data		t_data;
 struct s_stack {
 	int		size;
 	t_node	*top;
+	t_node	*bottom;
 };
 
 struct s_data {
