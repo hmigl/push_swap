@@ -33,11 +33,17 @@ int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
 void	fulfill(t_data *data, char **args, int argc);
 
+/*
+ * Basic stack operations
+ */
 t_node	*pop(t_stack *stack);
 t_node	*peek(t_stack *stack);
 int		isempty(t_node *top);
-
 void	push(t_stack *stack, t_node *new_node);
+
+/*
+ * Subject allowed actions
+ */
 void	pa(t_data *data);
 void	pb(t_data *data);
 
@@ -55,5 +61,11 @@ void	rev_rotate(t_stack *stack);
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
+
+/*
+ * Algorithm functions and utils
+ */
+void	sort_stack_elements(t_data *data);
+void	sort_trio(t_data *data);
 
 #endif
