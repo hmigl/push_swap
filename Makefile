@@ -12,8 +12,8 @@ DS_LIST := $(DS_LIST_DIR)/libds_list.a
 IFLAGS := -I$(INCLUDE_DIR) -I$(LFT_DIR) -I$(DS_LIST_DIR)
 LFLAGS := -L$(LFT_DIR) -lft -L$(DS_LIST_DIR) -lds_list
 
-CFLAGS := -Wall -Wextra -Werror
-CC := gcc -g
+CFLAGS := -Wall -Wextra -Werror -g
+CC := gcc $(CFLAGS)
 
 SRC = main.c error.c validation.c fulfill.c \
 	  ops_stack.c ops_push.c ops_swap.c ops_rotate.c ops_rev_rotate.c \
