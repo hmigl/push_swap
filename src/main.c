@@ -1,16 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmigl <hmigl@student.42sp.org.br>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/04 11:18:35 by hmigl             #+#    #+#             */
+/*   Updated: 2022/03/04 11:18:50 by hmigl            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdio.h>
-
-void displayforward(t_node *head)
-{
-	t_node *curr = head;
-
-	while (curr != NULL) {
-		printf("%d\n", curr->data);
-		curr = curr->next;
-	}
-	putchar('\n');
-}
 
 int	main(int argc, char *argv[])
 {
@@ -20,9 +20,7 @@ int	main(int argc, char *argv[])
 		err_manager(ERR_USAGE);
 	check_args(argv + 1, argc - 1);
 	fulfill(&data, argv + 1, argc - 1);
-	//displayforward(data.stack_a->top);
-	//printf("size: %d\n", data.stack_a->size);
-	//sort_stack();
+	sort_stack_elements(&data);
 	//clear();
 	return (0);
 }
