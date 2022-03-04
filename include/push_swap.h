@@ -6,7 +6,7 @@
 /*   By: hmigl <hmigl@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:13:11 by hmigl             #+#    #+#             */
-/*   Updated: 2022/03/04 11:13:12 by hmigl            ###   ########.fr       */
+/*   Updated: 2022/03/04 15:56:30 by hmigl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ enum e_errors {
 	ERR_SORTED
 };
 
+/*
+ * Algorithm functions and utils
+ */
+void	sort_stack_elements(t_data *data);
+void	sort_trio(t_data *data);
+void	sort_quintet(t_data *data);
+
 int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
 void	fulfill(t_data *data, char **args, int argc);
@@ -73,12 +80,5 @@ void	rev_rotate(t_stack *stack);
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
-
-/*
- * Algorithm functions and utils
- */
-void	sort_stack_elements(t_data *data);
-void	sort_trio(t_data *data);
-void	sort_quintet(t_data *data);
 
 #endif
