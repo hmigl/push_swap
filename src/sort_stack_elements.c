@@ -6,4 +6,6 @@ void	sort_stack_elements(t_data *data)
 		sa(data);
 	else if (data->stack_a->size == 3)
 		sort_trio(data);
+	else if (data->stack_a->size == 5)
+		sort_quintet(data);
 }

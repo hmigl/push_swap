@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmigl <hmigl@student.42sp.org.br>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/04 11:13:11 by hmigl             #+#    #+#             */
+/*   Updated: 2022/03/04 11:13:12 by hmigl            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -67,5 +79,6 @@ void	rrr(t_data *data);
  */
 void	sort_stack_elements(t_data *data);
 void	sort_trio(t_data *data);
+void	sort_quintet(t_data *data);
 
 #endif
