@@ -41,12 +41,20 @@ static void	init_stacks(t_data *data)
 
 void	fulfill(t_data *data, char **args, int argc)
 {
-	int	num;
+	int	i;
+	int	j;
+	int	*simplified;
+	int	*to_be_simplified;
 
+	to_be_simplified = malloc(sizeof(int) * argc);
+	if (!to_be_simplified)
+		return ;
+	i = -1;
+	j = i + 1;
+	while (++i < argc)
+		to_be_simplified[i] = ft_atoi(args[j++]);
+	simplified = fit_in_range(to_be_simplified, argc);
 	init_stacks(data);
 	while (argc-- != 0)
-	{
-		num = ft_atoi(args[argc]);
-		push(data->stack_a, dlstnew(num));
-	}
+		push(data->stack_a, dlstnew(simplified[argc]));
 }
