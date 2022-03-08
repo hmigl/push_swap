@@ -12,28 +12,42 @@
 
 #include "push_swap.h"
 
-static void	sort_array(int *array, int vol)
+static int	partition(int *array, int start, int end)
 {
 	int	i;
 	int	j;
+	int	pivot;
 	int	tmp;
 
-	i = 0;
-	while (i < vol)
+	pivot = array[end];
+	i = start - 1;
+	j = start;
+	while (j < end)
 	{
-		j = i + 1;
-		while (j < vol)
+		if (array[j] < pivot)
 		{
-			if (array[i] > array[j])
-			{
-				tmp = array[i];
-				array[i] = array[j];
-				array[j] = tmp;
-			}
-			++j;
+			++i;
+			tmp = array[j];
+			array[j] = array[i];
+			array[i] = tmp;
 		}
-		++i;
+		++j;
 	}
+	tmp = array[end];
+	array[end] = array[i + 1];
+	array[i + 1] = tmp;
+	return (i + 1);
+}
+
+static void	quick_sort(int *array, int start, int end)
+{
+	int	idx;
+
+	if (start >= end)
+		return ;
+	idx = partition(array, start, end);
+	quick_sort(array, start, idx - 1);
+	quick_sort(array, idx + 1, end);
 }
 
 static void	setup_arrays(int **aux, int *orig, int vol)
@@ -59,7 +73,7 @@ int	*fit_in_range(int *orig, int vol)
 	in_range = malloc(sizeof(int) * vol);
 	if (!in_range)
 		return (NULL);
-	sort_array(aux, vol);
+	quick_sort(aux, 0, vol - 1);
 	i = 0;
 	while (i < vol)
 	{

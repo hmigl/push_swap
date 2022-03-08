@@ -41,9 +41,7 @@ enum e_errors {
 	ERR_SORTED
 };
 
-/*
- * Algorithm functions and utils
- */
+// Algorithm functions and utils
 void	sort_stack_elements(t_data *data);
 void	sort_trio(t_data *data);
 void	sort_quintet(t_data *data);
@@ -53,17 +51,13 @@ void	err_manager(int exit_code);
 int		*fit_in_range(int *orig, int vol);
 void	fulfill(t_data *data, char **args, int argc);
 
-/*
- * Basic stack operations
- */
+// Basic stack operations
 t_node	*pop(t_stack *stack);
 t_node	*peek(t_stack *stack);
 int		isempty(t_node *top);
 void	push(t_stack *stack, t_node *new_node);
 
-/*
- * Subject allowed actions
- */
+// Allowed actions
 void	pa(t_data *data);
 void	pb(t_data *data);
 
