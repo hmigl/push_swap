@@ -42,7 +42,6 @@ static void	init_stacks(t_data *data)
 void	fulfill(t_data *data, char **args, int argc)
 {
 	int	i;
-	int	j;
 	int	*simplified;
 	int	*to_be_simplified;
 
@@ -50,9 +49,8 @@ void	fulfill(t_data *data, char **args, int argc)
 	if (!to_be_simplified)
 		return ;
 	i = -1;
-	j = i + 1;
 	while (++i < argc)
-		to_be_simplified[i] = ft_atoi(args[j++]);
+		to_be_simplified[i] = ft_atoi(args[i]);
 	simplified = fit_in_range(to_be_simplified, argc);
 	init_stacks(data);
 	while (argc-- != 0)

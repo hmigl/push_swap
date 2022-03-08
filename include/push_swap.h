@@ -50,9 +50,8 @@ void	sort_quintet(t_data *data);
 
 int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
-void	fulfill(t_data *data, char **args, int argc);
-
 int		*fit_in_range(int *orig, int vol);
+void	fulfill(t_data *data, char **args, int argc);
 
 /*
  * Basic stack operations
