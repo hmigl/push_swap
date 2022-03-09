@@ -45,6 +45,7 @@ enum e_errors {
 void	sort_stack_elements(t_data *data);
 void	sort_trio(t_data *data);
 void	sort_quintet(t_data *data);
+void	radix_sort(t_data *data);
 
 int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
