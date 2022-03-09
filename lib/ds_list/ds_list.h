@@ -28,5 +28,6 @@ void	dlstadd_front(t_node **lst, t_node *new);
 void	dlstadd_back(t_node **lst, t_node *new);
 void	dlst_dealloc(t_node **head, t_node **tail);
 int		dlst_issorted(t_node *node);
+int		dlst_largest(t_node *node);
 
 #endif
