@@ -14,7 +14,7 @@
 
 void	err_manager(int exit_code)
 {
-	if (exit_code != ERR_USAGE)
+	if (exit_code == ERR_ARGS || exit_code == ERR_DUP || exit_code == ERR_RANGE)
 		ft_putendl_fd("Error", STDERR_FILENO);
 	exit(exit_code + 1);
 }
