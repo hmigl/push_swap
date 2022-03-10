@@ -83,5 +83,6 @@ int	*fit_in_range(int *orig, int vol)
 		in_range[i] = j;
 		++i;
 	}
+	free(aux);
 	return (in_range);
 }

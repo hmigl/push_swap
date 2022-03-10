@@ -51,6 +51,7 @@ int		check_args(char **args, int argc);
 void	err_manager(int exit_code);
 int		*fit_in_range(int *orig, int vol);
 void	fulfill(t_data *data, char **args, int argc);
+void	ps_global_cleanup(t_data *data);
 
 // Basic stack operations
 t_node	*pop(t_stack *stack);

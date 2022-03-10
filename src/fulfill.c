@@ -55,4 +55,6 @@ void	fulfill(t_data *data, char **args, int argc)
 	init_stacks(data);
 	while (argc-- != 0)
 		push(data->stack_a, dlstnew(simplified[argc]));
+	free(to_be_simplified);
+	free(simplified);
 }
