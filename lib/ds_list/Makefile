@@ -6,28 +6,30 @@ SRC := dlstnew.c dlstlast.c dlstadd_front.c \
 	   dlstadd_back.c dlst_dealloc.c dlst_issorted.c dlst_largest.c
 
 OBJ := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-CFLAGS := -Wall -Wextra -Werror -g
-CC := gcc $(CFLAGS)
+
+ARFLAGS := rcs
+CFLAGS += -Wall -Wextra -Werror -g
+CC := gcc
+
+$(OBJ_DIR)/%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
 $(OBJ): | $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $@
 
-$(OBJ_DIR)/%.o: %.c
-	@$(CC) -c $< -o $@
-
 clean:
-	@rm -rf $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean
